@@ -1,0 +1,13 @@
+// Api Functions README
+"""
+This code snippet is a part of course work i did.
+The course work was creating a rideshare app.
+
+More specifically, we created a database to handle users, rides, 
+and the many other things you would need for such an app.
+
+This code snippet connects the database to a callable API.
+Which were unit tested in a separate python file.
+
+This specific snippet of the code was just for user information api
+"""
