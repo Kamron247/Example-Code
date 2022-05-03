@@ -1,0 +1,32 @@
+class Users(Resource):
+    def get(self):
+        print('Users: GET')
+        return resources.list_accounts()
+
+    def post(self):
+        print('Users: POST')
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('FIRST', type=str)
+        parser.add_argument('LAST', type=str)
+        parser.add_argument('USER', type=str)
+        parser.add_argument('PASS', type=str)
+        args = parser.parse_args()
+        first = args['FIRST']
+        last = args['LAST']
+        user = args['USER']
+        password = args['PASS']
+        
+        return resources.add_user(first, last, user, password)
+    
+    def put(self):
+        print('User Details: PUT')
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('USER', type=str)
+        parser.add_argument('REQU', type=str)
+        args = parser.parse_args()
+        user = args['USER']
+        request = args['REQU']
+
+        return resources.edit_user(user, request)
